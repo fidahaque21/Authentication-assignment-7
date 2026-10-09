@@ -4,8 +4,6 @@ import Image from "next/image";
 
 const Hero = () => {
 return ( <section className="bg-[#f0f5f1] px-4 py-6 sm:px-6 lg:px-8"> <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 rounded-[24px] border border-[#e0e9e1] bg-[#fbfdfb] px-5 py-7 sm:px-8 sm:py-9 md:flex-row md:gap-6 lg:px-10">
-
-```
     {/* Left Content */}
     <div className="w-full md:max-w-[65%]">
       <span className="inline-block rounded-full bg-[#e0f2e7] px-3 py-1.5 text-sm font-semibold text-[#159447]">
