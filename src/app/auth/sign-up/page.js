@@ -205,7 +205,7 @@ return ( <main className="min-h-screen bg-[#f1f5f0] px-4 py-8 sm:py-10"> <div cl
       <p className="mt-4 text-center text-sm text-[#58625a]">
         অ্যাকাউন্ট আছে?{" "}
         <a
-          href="/login"
+          href="/auth/sign-in"
           className="font-medium text-[#07883e] transition hover:text-[#056c31]"
         >
           সাইন ইন করুন
