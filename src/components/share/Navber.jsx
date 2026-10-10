@@ -1,5 +1,5 @@
 import Link from "next/link";
-import DateText from "@/components/DateText";
+import DateText from "@/components/context/DateText";
 import Marquree from "@/app/Marquree/page";
 
 // Fetch categories
@@ -35,12 +35,15 @@ const Navbar = async () => {
   const categories = await getCategories();
 
   return (
-    <nav className=" border-b border-gray-200 bg-white">
+    <nav className="border-b border-gray-200 bg-white">
       {/* Top Section */}
       <div className="border-b border-gray-100">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           {/* Logo and Date */}
-          <Link href="/" className="flex shrink-0 items-center gap-2">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center gap-2"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-600 text-xl shadow-sm">
               🛒
             </div>
@@ -59,14 +62,14 @@ const Navbar = async () => {
           {/* Authentication Buttons */}
           <div className="flex shrink-0 items-center gap-3 sm:gap-6">
             <Link
-              href="/login"
+              href="/auth/sign-in"
               className="rounded-md px-2 py-2 text-xs font-semibold text-gray-800 transition hover:text-green-700 sm:text-sm"
             >
               সাইন ইন
             </Link>
 
             <Link
-              href="/register"
+              href="/auth/sign-up"
               className="rounded-lg bg-green-700 px-3 py-2.5 text-xs font-semibold text-white shadow-md transition hover:bg-green-800 sm:px-5 sm:text-sm"
             >
               সাইন আপ
@@ -81,7 +84,9 @@ const Navbar = async () => {
           {categories.map((category) => (
             <Link
               key={category.id}
-              href={`/category/${category.slug}`}
+              href={`/category/${encodeURIComponent(
+                category.slug ?? category.id
+              )}`}
               className="flex shrink-0 items-center gap-1.5 text-sm font-medium text-gray-700 transition hover:text-green-700"
             >
               <span>{category.icon}</span>

@@ -1,5 +1,5 @@
 
-import ProductSort from "@/components/ProductSort";
+import ProductSort from "@/components/products/ProductSort";
 
 const API_URL =
   "https://api.api-store.workers.dev/api/bazardor/products";

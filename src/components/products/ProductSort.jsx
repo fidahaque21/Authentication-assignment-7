@@ -93,13 +93,19 @@ function ProductCard({ product }) {
     typeof image === "string" &&
     /^https?:\/\//i.test(image);
 
-  const productHref = `/products/${product.slug ?? product.id}`;
+  // const productHref = `/products/${product.slug ?? product.id}`;
+ const productHref = `/products/${encodeURIComponent(
+  product.slug ?? product.id
+)}`;
 
   return (
+
     <Link
       href={productHref}
-      className="group flex min-w-0 flex-col rounded-xl border border-[#e5ebe5] bg-[#fbfdfb] p-3 transition hover:border-green-300 hover:shadow-md sm:p-4"
+      className="group flex min-w-0 flex-col rounded-xl border border-gray-200 !bg-white p-3 text-gray-800 shadow-sm transition hover:border-green-300 hover:shadow-md sm:p-4"
     >
+
+
       {/* Product information */}
       <div className="flex min-w-0 items-center gap-2.5">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-[#f0f5f0] text-xl sm:h-11 sm:w-11 sm:text-2xl">
